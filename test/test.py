@@ -25,3 +25,15 @@ def test_merge():
     assert_list_equal(sorted_list, merge_sort(unsorted))
 
     # still takes about a second but... is a bit faster, should probably use C...
+
+
+def test_inbuilt():
+    sorted_list = [i for i in range(850000)]
+
+    unsorted = sorted_list.copy()
+    random.shuffle(unsorted)
+
+    unsorted.sort()
+    assert_list_equal(sorted_list, unsorted)
+
+    # i'm just going to leave sorting to the inbuilt bois
